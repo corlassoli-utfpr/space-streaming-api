@@ -2,12 +2,12 @@ from flask import jsonify
 from models import empresas
 from models import lancamentos
 
-def buscar_empresa(busca, pagina):
+def buscar(busca, pagina):
     resultado = empresas.buscar(busca, pagina)
     
     return jsonify(resultado)
 
-def pagina_empresa(id):
+def pagina(id):
     empresa = empresas.buscar_por_id(id)
 
     if empresa is None:

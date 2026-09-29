@@ -144,7 +144,7 @@ VALUES
     'wbSwFU6tY1c',
     'https://www.youtube.com/watch?v=wbSwFU6tY1c',
     'https://img.youtube.com/vi/wbSwFU6tY1c/hqdefault.jpg',
-    NULL,
+    '34:18',
     1
 ),
 
@@ -153,7 +153,7 @@ VALUES
     'hI9HQfCAw64',
     'https://www.youtube.com/watch?v=hI9HQfCAw64',
     'https://img.youtube.com/vi/hI9HQfCAw64/hqdefault.jpg',
-    NULL,
+    '3:27',
     2
 ),
 
@@ -162,7 +162,7 @@ VALUES
     'zctTKdQcmVA',
     'https://www.youtube.com/watch?v=zctTKdQcmVA',
     'https://img.youtube.com/vi/zctTKdQcmVA/hqdefault.jpg',
-    NULL,
+    '4:22',
     3
 ),
 
@@ -171,7 +171,7 @@ VALUES
     'keCc0_8QfL8',
     'https://www.youtube.com/watch?v=keCc0_8QfL8',
     'https://img.youtube.com/vi/keCc0_8QfL8/hqdefault.jpg',
-    NULL,
+    '1:59',
     4
 ),
 
@@ -180,7 +180,7 @@ VALUES
     'QfBCuK6wEYA',
     'https://www.youtube.com/watch?v=QfBCuK6wEYA',
     'https://img.youtube.com/vi/QfBCuK6wEYA/hqdefault.jpg',
-    NULL,
+    '4:47',
     5
 ),
 
@@ -189,7 +189,7 @@ VALUES
     'NK3rUwGMW8g',
     'https://www.youtube.com/watch?v=NK3rUwGMW8g',
     'https://img.youtube.com/vi/NK3rUwGMW8g/hqdefault.jpg',
-    NULL,
+    '3:14',
     6
 ),
 
@@ -198,7 +198,7 @@ VALUES
     'rJ0nFKyVong',
     'https://www.youtube.com/watch?v=rJ0nFKyVong',
     'https://img.youtube.com/vi/rJ0nFKyVong/hqdefault.jpg',
-    NULL,
+    '1:28',
     7
 ),
 
@@ -207,7 +207,7 @@ VALUES
     'zz6tRqQFU-Q',
     'https://www.youtube.com/watch?v=zz6tRqQFU-Q',
     'https://img.youtube.com/vi/zz6tRqQFU-Q/hqdefault.jpg',
-    NULL,
+    '10:40',
     8
 ),
 
@@ -216,7 +216,7 @@ VALUES
     'P30-FXePPKU',
     'https://www.youtube.com/watch?v=P30-FXePPKU',
     'https://img.youtube.com/vi/P30-FXePPKU/hqdefault.jpg',
-    NULL,
+    '2:45',
     9
 ),
 
@@ -225,6 +225,6 @@ VALUES
     'nyVbmoRXcvc',
     'https://www.youtube.com/watch?v=nyVbmoRXcvc',
     'https://img.youtube.com/vi/nyVbmoRXcvc/hqdefault.jpg',
-    NULL,
+    '34:40',
     10
 );

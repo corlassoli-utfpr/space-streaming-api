@@ -27,7 +27,7 @@ CREATE TABLE videos (
     youtube_id VARCHAR(50) NOT NULL,
     url VARCHAR(255) NOT NULL,
     thumbnail VARCHAR(255),
-    duracao VARCHAR(20),
+    duracao VARCHAR(20) NOT NULL,
     lancamento_id INT NOT NULL,
     FOREIGN KEY (lancamento_id) REFERENCES lancamentos(id)
 );

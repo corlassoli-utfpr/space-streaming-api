@@ -1,2 +1,0 @@
-# Este Controller permanece vazio porque os lançamentos são acessados através da página de uma empresa
-# Por isso, o empresasCtrl.py utiliza diretamente o Model de lançamentos para buscar os lançamentos relacionados.

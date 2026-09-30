@@ -1,4 +1,6 @@
 from flask import Flask
+from controllers import empresasCtrl
+from controllers import videosCtrl
 
 app = Flask(__name__)
 
@@ -6,17 +8,17 @@ app = Flask(__name__)
 def root():
     return 'teste'
 
-@app.route('/videos/<string:busca>/<int:pagina>') # Busca de um vídeo por string
+@app.route('/videos/<string:busca>/<int:pagina>')
 def buscar_videos(busca, pagina):
-    return f'teste {busca} {pagina}'
+    return videosCtrl.buscar(busca, pagina)
 
-@app.route('/empresas/<string:busca>/<int:pagina>') # Busca de uma empresa por string
+@app.route('/empresas/<string:busca>/<int:pagina>')
 def buscar_empresas(busca, pagina):
-    return f'teste {busca} {pagina}'
+    return empresasCtrl.buscar(busca, pagina)
 
-@app.route('/empresas/<int:id>') # Página da empresa pelo id com seus lançamentos
+@app.route('/empresas/<int:id>')
 def pagina_empresa(id):
-    return f'teste {id}'
+    return empresasCtrl.pagina(id)
 
 if __name__ == "__main__":
-    app.run(port=3000, host='0.0.0.0', debug=True)
+    app.run(port=3000, host='0.0.0.0', debug=True, use_reloader=False)

@@ -6,9 +6,9 @@ def buscar(busca, pagina):
     cursor = conexao.cursor(dictionary=True) # Retorna em formato de dicionário
 
     limite = 5 # Total de vídeos por página
-    offset = (pagina - 1) * limite # Total de vídeos que serão 'pulados' no resultado de acordo com o número da página
+    offset = (pagina - 1) * limite # Total de vídeos que serão 'pulados' de acordo com o número da página
 
-    # Recebe as informações do vídeo, e realiza join para identificar para qual lançamento e empresa o vídeo se relaciona, passando a busca, limite e offset como parâmetros
+    # Recebe as informações do vídeo e realiza JOIN para identificar o lançamento e a empresa relacionados.
     cursor.execute("""
         SELECT
             v.id,
@@ -17,7 +17,9 @@ def buscar(busca, pagina):
             v.url,
             v.thumbnail,
             v.duracao,
+            l.id AS lancamento_id,
             l.nome AS lancamento,
+            e.id AS empresa_id,
             e.nome AS empresa
         FROM videos v
         JOIN lancamentos l ON v.lancamento_id = l.id

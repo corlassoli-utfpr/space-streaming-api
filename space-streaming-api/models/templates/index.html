@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ROCKETS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <div class="container">
+      <a class="marca" href="#topo">LaunchRockets</a>
+      <nav aria-label="Principal">
+        <a href="#buscar">Buscar</a>
+        <a href="#player">Player</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#detalhes">Detalhes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="topo">
+
+    <section id="buscar" aria-labelledby="titulo-busca">
+      <h1 id="titulo-busca">Lançamentos de foguetes</h1>
+      <p class="subtitulo">Busque por foguete, missão ou empresa e assista pelo YouTube.</p>
+
+      <form class="busca" action="index.html" method="get" role="search">
+        <label for="termo" hidden>Buscar lançamentos</label>
+        <input id="termo" type="search" name="termo" placeholder="Ex.: falcon, starlink, electron">
+        <input type="hidden" name="page" value="1">
+        <button class="botao" type="submit">Buscar</button>
+      </form>
+    </section>
+
+    <section id="player" aria-labelledby="titulo-player">
+      <div class="layout-player">
+
+        <article class="player">
+          <div class="player-tela">
+            <!-- Troque SEU_YOUTUBE_ID pelo campo youtube_id do banco. -->
+            <iframe
+              id="player-youtube"
+              src="https://www.youtube-nocookie.com/embed/SEU_YOUTUBE_ID"
+              title="Player do vídeo do lançamento"
+              loading="lazy"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+              allowfullscreen></iframe>
+          </div>
+          <div class="player-info">
+            <h3 id="titulo-player">Título do vídeo selecionado</h3>
+            <p class="meta">Lançamento: Nome do lançamento &middot; Empresa: Nome da empresa</p>
+          </div>
+        </article>
+
+        <aside aria-label="Vídeos do lançamento">
+          <ul class="lista-videos">
+            <li class="ativo">
+              <a href="#player" aria-current="true">
+                <div class="thumb"><!-- <img src="URL_DA_THUMBNAIL" alt=""> --></div>
+                <div><strong>Transmissão oficial</strong><small>Duração 00:00</small></div>
+              </a>
+            </li>
+            <li>
+              <a href="#player">
+                <div class="thumb"></div>
+                <div><strong>Gravação / comentário</strong><small>Duração 00:00</small></div>
+              </a>
+            </li>
+            <li>
+              <a href="#player">
+                <div class="thumb"></div>
+                <div><strong>Outro vídeo relacionado</strong><small>Duração 00:00</small></div>
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+      </div>
+    </section>
+
+    <section id="resultados" aria-labelledby="titulo-resultados">
+      <h2 id="titulo-resultados">Resultados</h2>
+
+      <ul class="cards">
+        <li class="card">
+          <div class="thumb"></div>
+          <div class="card-corpo">
+            <h3><a href="#player">Nome do lançamento</a></h3>
+            <p class="meta">Empresa &middot; 00/00/0000</p>
+            <p><span class="status">Sucesso</span></p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="thumb"></div>
+          <div class="card-corpo">
+            <h3><a href="#player">Nome do lançamento</a></h3>
+            <p class="meta">Empresa &middot; 00/00/0000</p>
+            <p><span class="status">Sucesso</span></p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="thumb"></div>
+          <div class="card-corpo">
+            <h3><a href="#player">Nome do lançamento</a></h3>
+            <p class="meta">Empresa &middot; 00/00/0000</p>
+            <p><span class="status">Sucesso</span></p>
+          </div>
+        </li>
+      </ul>
+
+      <nav class="paginacao" aria-label="Paginação dos resultados">
+        <span class="desativado">Anterior</span>
+        <span class="atual" aria-current="page">1</span>
+        <a href="?page=2">2</a>
+        <a href="?page=3">3</a>
+        <a href="?page=2">Próxima</a>
+      </nav>
+    </section>
+
+    <section id="detalhes" aria-label="Detalhes">
+      <div class="duas-colunas">
+
+        <article class="painel" aria-labelledby="titulo-lancamento">
+          <h2 id="titulo-lancamento">Lançamento</h2>
+          <dl class="dados">
+            <dt>Nome</dt>    <dd>Nome do lançamento</dd>
+            <dt>Data</dt>    <dd>00/00/0000</dd>
+            <dt>Foguete</dt> <dd>Nome do foguete</dd>
+            <dt>Missão</dt>  <dd>Nome da missão</dd>
+            <dt>Local</dt>   <dd>Base / plataforma</dd>
+            <dt>Status</dt>  <dd>Sucesso</dd>
+          </dl>
+          <p class="meta">Descrição do lançamento vinda do banco de dados.</p>
+        </article>
+
+        <article class="painel" aria-labelledby="titulo-empresa">
+          <h2 id="titulo-empresa">Empresa</h2>
+          <dl class="dados">
+            <dt>Nome</dt> <dd>Nome da empresa</dd>
+            <dt>País</dt> <dd>País de origem</dd>
+          </dl>
+          <p class="meta">Descrição da empresa vinda do banco de dados.</p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      Os vídeos pertencem aos seus canais no YouTube. Aqui guardamos apenas as referências.
+    </div>
+  </footer>
+
+</body>
+</html>

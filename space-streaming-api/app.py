@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from controllers import empresasCtrl
 from controllers import videosCtrl
 
@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def root():
-    return 'teste' # Implementação da página inicial html será aqui
+    return render_template('index.html')
 
 @app.route('/videos/<string:busca>/<int:pagina>') # Como temos 10 vídeos, a paginação divide em no máximo 5 por página
 def buscar_videos(busca, pagina):

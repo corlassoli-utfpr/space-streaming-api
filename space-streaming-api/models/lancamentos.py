@@ -19,7 +19,7 @@ def buscar_por_empresa(empresa_id):
         FROM lancamentos
         WHERE empresa_id = %s
         ORDER BY data DESC
-    """, (empresa_id,))
+    """, (empresa_id,)) # Todos os lançamentos onde o id da empresa é correspondente
 
     resultado = cursor.fetchall()
 

@@ -2,16 +2,16 @@ from database.conn import connect
 
 def buscar(busca):
     conexao = connect()
-    cursor = conexao.cursor(dictionary=True)
+    cursor = conexao.cursor(dictionary=True) # Retorna em formato de dicionário
 
     cursor.execute("""
         SELECT id, nome, descricao
         FROM empresas
         WHERE nome LIKE %s
         ORDER BY id
-    """, ("%" + busca + "%",))
+    """, ("%" + busca + "%",)) # Permite busca por substring
 
-    resultado = cursor.fetchall()
+    resultado = cursor.fetchall() # Recolhe os resultados
 
     cursor.close()
     conexao.close()
@@ -27,9 +27,9 @@ def buscar_por_id(id):
         SELECT id, nome, descricao
         FROM empresas
         WHERE id = %s
-    """, (id,))
+    """, (id,)) # Apenas encontra o valor onde o id corresponde
 
-    resultado = cursor.fetchone()
+    resultado = cursor.fetchone() # Como o id é único, retornará apenas um resultado
 
     cursor.close()
     conexao.close()

@@ -5,8 +5,8 @@ def buscar(busca, pagina):
     conexao = connect()
     cursor = conexao.cursor(dictionary=True) # Retorna em formato de dicionário
 
-    limite = 5 # Total de vídeos por página
-    offset = (pagina - 1) * limite # Total de vídeos que serão 'pulados' de acordo com o número da página
+    limite = 5 # Quantidade de vídeos por página
+    offset = (pagina - 1) * limite # Quantidade de vídeos que serão pulados de acordo com a página
 
     # Recebe as informações do vídeo e realiza JOIN para identificar o lançamento e a empresa relacionados.
     cursor.execute("""
@@ -27,7 +27,7 @@ def buscar(busca, pagina):
         WHERE v.titulo LIKE %s
         ORDER BY v.id
         LIMIT %s OFFSET %s
-    """, ("%" + busca + "%", limite, offset))
+    """, ("%" + busca + "%", limite, offset)) # Busca que também permite or substring, junto com o limite e offset que permite a paginação
 
     resultado = cursor.fetchall()
 

@@ -1,10 +1,11 @@
 from flask import Flask, render_template
 from controllers import empresasCtrl
 from controllers import videosCtrl
+from database.conn import close_connection
 
 app = Flask(__name__)
 
-@app.route('/') # Rota com a página princial do front que consome os dados
+@app.route('/') # Rota com a página principal do front que consome os dados
 def root():
     return render_template('index.html')
 
@@ -20,6 +21,10 @@ def buscar_empresas(busca):
 def pagina_empresa(id):
     return empresasCtrl.pagina(id)
 
+@app.teardown_appcontext # Fecha a conexão com o banco ao final do contexto da requisição
+def fechar_conexao(exception=None):
+    close_connection(exception)
+
 if __name__ == "__main__":
-    app.run(port=3000, host='0.0.0.0', debug=True, use_reloader=False) 
+    app.run(port=3000, host='0.0.0.0', debug=True, use_reloader=False)
     # Removemos o reloader pois ao recarregar o código solicitava a senha do banco múltiplas vezes no desenvolvimento

@@ -1,9 +1,10 @@
-from database.conn import connect
+from database.conn import get_connection
 
 def buscar(busca, pagina):
-    with connect() as conexao:
-        cursor = conexao.cursor(dictionary=True) # Retorna em formato de dicionário
+    conexao = get_connection()
+    cursor = conexao.cursor(dictionary=True) # Retorna em formato de dicionário
 
+    try:
         limite = 5 # Quantidade de vídeos por página
         offset = (pagina - 1) * limite # Quantidade de vídeos que serão pulados de acordo com a página
 
@@ -26,8 +27,10 @@ def buscar(busca, pagina):
             WHERE v.titulo LIKE %s
             ORDER BY v.id
             LIMIT %s OFFSET %s
-        """, ("%" + busca + "%", limite, offset)) # Busca que também permite or substring, junto com o limite e offset que permite a paginação
+        """, ("%" + busca + "%", limite, offset)) # Busca por substring, com limite e paginação
 
         resultado = cursor.fetchall()
-        
+
         return resultado
+    finally:
+        cursor.close()

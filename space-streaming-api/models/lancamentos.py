@@ -1,9 +1,10 @@
-from database.conn import connect
+from database.conn import get_connection
 
 def buscar_por_empresa(empresa_id):
-    with connect() as conexao:
-        cursor = conexao.cursor(dictionary=True) # Retorna em formato de dicionário
+    conexao = get_connection()
+    cursor = conexao.cursor(dictionary=True) # Retorna em formato de dicionário
 
+    try:
         # Busca os lançamentos relacionados a uma empresa
         cursor.execute("""
             SELECT
@@ -23,3 +24,5 @@ def buscar_por_empresa(empresa_id):
         resultado = cursor.fetchall()
 
         return resultado
+    finally:
+        cursor.close()

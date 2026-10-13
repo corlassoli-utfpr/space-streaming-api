@@ -1,9 +1,10 @@
-from database.conn import connect
+from database.conn import get_connection
 
 def buscar(busca):
-    with connect() as conexao:
-        cursor = conexao.cursor(dictionary=True) # Retorna em formato de dicionário
+    conexao = get_connection()
+    cursor = conexao.cursor(dictionary=True) # Retorna em formato de dicionário
 
+    try:
         cursor.execute("""
             SELECT id, nome, descricao
             FROM empresas
@@ -14,11 +15,14 @@ def buscar(busca):
         resultado = cursor.fetchall() # Recolhe os resultados
 
         return resultado
+    finally:
+        cursor.close()
 
 def buscar_por_id(id):
-    with connect() as conexao:
-        cursor = conexao.cursor(dictionary=True) # Retorna em formato de dicionário
+    conexao = get_connection()
+    cursor = conexao.cursor(dictionary=True) # Retorna em formato de dicionário
 
+    try:
         # Busca uma empresa pelo seu ID
         cursor.execute("""
             SELECT id, nome, descricao
@@ -29,3 +33,5 @@ def buscar_por_id(id):
         resultado = cursor.fetchone() # Como o id é único, retornará apenas um resultado
 
         return resultado
+    finally:
+        cursor.close()

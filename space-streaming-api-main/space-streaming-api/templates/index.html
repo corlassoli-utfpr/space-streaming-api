@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Space Streaming</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <strong>SPACE STREAMING</strong>
+    </div>
+</header>
+
+
+<main class="container">
+
+    <section class="busca">
+
+        <p>
+            Consulte vídeos, empresas e lançamentos espaciais.
+        </p>
+
+        <form id="form-busca">
+
+            <select id="tipo-busca">
+                <option value="videos">Vídeos</option>
+                <option value="empresas">Empresas</option>
+                <option value="empresa-id">Empresa por ID</option>
+            </select>
+
+            <input
+                id="termo"
+                type="search"
+                placeholder="Digite sua busca..."
+            >
+
+            <button type="submit">
+                Buscar
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <section class="conteudo">
+
+        <div class="player">
+
+            <div class="video">
+
+                <iframe
+                    id="player-youtube"
+                    src=""
+                    title="Vídeo"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+            <div class="player-info">
+
+                <h2 id="titulo-video">
+                    Selecione um vídeo
+                </h2>
+
+                <p id="info-video">
+                    Nenhum vídeo selecionado.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <h2>Resultados</h2>
+
+            <ul id="lista-resultados">
+                <li>Nenhum resultado.</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <section class="detalhes">
+
+        <div>
+
+            <h2>Lançamento</h2>
+
+            <p><strong>Nome:</strong> <span id="lancamento-nome">-</span></p>
+            <p><strong>Data:</strong> <span id="lancamento-data">-</span></p>
+            <p><strong>Foguete:</strong> <span id="lancamento-foguete">-</span></p>
+            <p><strong>Missão:</strong> <span id="lancamento-missao">-</span></p>
+            <p><strong>Local:</strong> <span id="lancamento-local">-</span></p>
+            <p><strong>Status:</strong> <span id="lancamento-status">-</span></p>
+
+            <p id="lancamento-descricao">-</p>
+
+        </div>
+
+
+        <div>
+
+            <h2>Empresa</h2>
+
+            <p>
+                <strong>Nome:</strong>
+                <span id="empresa-nome">-</span>
+            </p>
+
+            <p id="empresa-descricao">-</p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <div class="container">
+        Os vídeos apresentados são hospedados no YouTube. O Space Streaming apenas disponibiliza o acesso ao conteúdo por meio de links e incorporações da plataforma.
+    </div>
+</footer>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
